@@ -1,0 +1,64 @@
+base_indent = 1
+insert_space_around_operators = true
+global_prefix = ""
+
+# ループ
+[loop]
+header = "for(int {loop_var} = 0 ; {loop_var} < {length} ; {loop_var}++){{"
+footer = "}}"
+
+# タイプ
+[type]
+int = "ll"
+float = "long double"
+str = "string"
+
+# デフォルト値
+[default]
+int = "0"
+float = "0.0"
+str = '""'
+
+# 引数
+[arg]
+int = "ll {name}"
+float = "long double {name}"
+str = "string {name}"
+seq = "vector<{type}> {name}"
+2d_seq = "vector<vector<{type}>> {name}"
+
+# 引数への渡し方
+[actual_arg]
+seq = "move({name})"
+2d_seq = "move({name})"
+
+# 配列アクセス
+[access]
+seq = "{name}[{index}]"
+2d_seq = "{name}[{index_i}][{index_j}]"
+
+# 宣言
+[declare]
+int = "ll {name};"
+float = "long double {name};"
+str = "string {name};"
+seq = "vector<{type}> {name};"
+2d_seq = "vector<vector<{type}>> {name};"
+
+# 確保
+[allocate]
+seq = "{name}.assign({length}, {default});"
+2d_seq = "{name}.assign({length_i}, vector<{type}>({length_j}));"
+
+# 宣言と確保
+[declare_and_allocate]
+seq = "vector<{type}> {name}({length});"
+2d_seq = "vector<vector<{type}>> {name}({length_i}, vector<{type}>({length_j}));"
+
+# 入力
+[input]
+#int = "cin >> {name};"
+int = "scanf(\"%lld\", &{name});"
+#float = "cin >> {name};"
+float = "scanf(\"%Lf\", &{name});"
+str = "cin >> {name};"

@@ -1,0 +1,23 @@
+[codestyle]
+indent_type='space' # 'tab' or 'space'
+indent_width=4
+template_file='/workdir/my_template.cpp'
+workspace_dir='/workdir/src/'
+lang='cpp' # Check README.md for the supported languages.
+code_generator_toml="/workdir/universal_code_generator.toml"
+[postprocess]
+exec_on_each_problem_dir='clang-format -i ./*.cpp'
+[compiler]
+compile_command='g++ main.cpp -o main -std=c++20'
+compile_only_when_diff_detected=true
+[tester]
+compile_before_testing=true
+compile_only_when_diff_detected=true
+timeout_adjustment=1.2
+[etc]
+download_without_login=true
+parallel_download=false
+save_no_session_cache=false
+skip_existing_problems=true
+in_example_format="in_{}.txt"
+out_example_format="out_{}.txt"

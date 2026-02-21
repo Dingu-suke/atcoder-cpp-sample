@@ -1,0 +1,25 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+            "label": "AtCoder Test",
+            "type": "shell",
+            "command": "cd ${fileDirname} && atcoder-tools test",
+            "presentation": {
+              "reveal": "always",
+              "focus": true,
+              "panel": "shared",
+            }
+        },
+        {
+            "label": "AtCoder Submit",
+            "type": "shell",
+            "command": "cd ${fileDirname} && atcoder-tools submit -u",
+            "presentation": {
+              "reveal": "always",
+              "focus": true,
+              "panel": "shared",
+            }
+        }
+	]
+}
