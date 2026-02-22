@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    image: ghcr.io/maki8maki/atcoder-cpp-docker
+    container_name: atcoder-cpp-app
+    working_dir: /workdir
+    volumes:
+      - .:/workdir
+      - ./.atcodertools.toml:/root/.atcodertools.toml:ro
+    environment:
+      - SHELL=/bin/bash
+    stdin_open: true
+    tty: true
+    command: /bin/bash
