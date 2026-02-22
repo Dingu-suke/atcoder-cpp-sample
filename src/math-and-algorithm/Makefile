@@ -2,7 +2,7 @@
 
 # サブディレクトリ用 Makefile
 CONTEST_DIR := $(shell basename $(CURDIR))
-ROOT_DIR := $(shell cd $(CURDIR)/../../.. && pwd)
+ROOT_DIR := $(shell cd $(CURDIR)/../.. && pwd)
 
 help:
 	@echo "Available commands (in $(CONTEST_DIR)):"
