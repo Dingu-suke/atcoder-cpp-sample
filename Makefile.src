@@ -1,7 +1,7 @@
 .PHONY: help test submit
 
 # src ディレクトリ用 Makefile
-ROOT_DIR := $(shell cd ../.. && pwd)
+ROOT_DIR := $(shell cd $(CURDIR)/.. && pwd)
 
 help:
 	@echo "Available commands (in src/):"
